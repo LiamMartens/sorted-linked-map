@@ -1,13 +1,14 @@
 {
   "name": "sorted-linked-map",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "types": "./lib/index.d.ts",
   "module": "./lib/index.js",
   "exports": {
     ".": {
       "types": "./lib/index.d.ts",
-      "import": "./lib/index.js"
+      "import": "./lib/index.js",
+      "default": "./lib/index.js"
     }
   },
   "license": "MIT",
@@ -15,7 +16,7 @@
     "lib"
   ],
   "scripts": {
-    "compile:js": "esbuild --bundle --format=esm --target=safari11 --outfile=./lib/index.js ./src/index.ts",
+    "compile:js": "esbuild --bundle --format=esm --target=es2020,chrome58,edge16,firefox57,node12,safari11 --outfile=./lib/index.js ./src/index.ts",
     "compile:ts": "tsc -p tsconfig.build.json",
     "compile": "run-p compile:*"
   },
